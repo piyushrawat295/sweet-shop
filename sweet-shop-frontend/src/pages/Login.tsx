@@ -5,38 +5,23 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const nav = useNavigate();
 
-  const handleLogin = async () => {
-    try {
-      await loginUser(email, password);
-      alert("Login successful");
-      navigate("/sweets");
-    } catch (err: any) {
-      alert(err.response?.data?.message || "Login failed");
-    }
+  const submit = async () => {
+    await loginUser(email, password);
+    nav("/shop");
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button onClick={handleLogin}>Login</button>
-      <p>
-        New user? <a href="/register">Register</a>
-      </p>
+    <div className="min-h-screen flex items-center justify-center bg-black text-white">
+      <div className="bg-zinc-900 p-8 rounded w-96">
+        <h2 className="text-2xl mb-4">Login</h2>
+        <input className="w-full mb-3 p-2" placeholder="Email" onChange={e=>setEmail(e.target.value)} />
+        <input className="w-full mb-4 p-2" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)} />
+        <button onClick={submit} className="bg-pink-500 w-full py-2 rounded">
+          Login
+        </button>
+      </div>
     </div>
   );
 }

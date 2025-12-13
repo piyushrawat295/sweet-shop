@@ -1,21 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from "./pages/Register";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
 import Login from "./pages/Login";
-import Sweets from "./pages/sweets";
+import Register from "./pages/Register";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-
-
-
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/sweets" element={<Sweets />} />
-      </Routes>
+      <Navbar />
+
+      {/* 👇 THIS padding is REQUIRED because navbar is fixed */}
+      <div className="pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop  />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+
+      <Footer />
     </BrowserRouter>
   );
 }
-
-export default App;
