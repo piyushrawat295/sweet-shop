@@ -12,8 +12,6 @@ app.get("/ping", (req, res) => {
 app.get("/api/health", (req, res) => {
   res.json({ status: "OK" });
 });
-
-
 app.use("/api", routes);
 app.use(errorMiddleware);
 

@@ -2,7 +2,7 @@ import { Candy, ShoppingCart } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="relative h-[500px] bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex items-center">
+    <div className="relative h-[500px] bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-yellow-400 flex items-center gap-2 mb-4">
           <Candy size={18} />
