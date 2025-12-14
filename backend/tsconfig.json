@@ -5,8 +5,9 @@
     "moduleResolution": "node",
     "rootDir": "src",
     "outDir": "dist",
-    "strict": false,
-    "esModuleInterop": true
+    "strict": true,
+    "esModuleInterop": true,
+    "types": ["node"]   // ✅ ADD THIS
   },
   "exclude": ["tests", "node_modules"]
 }
