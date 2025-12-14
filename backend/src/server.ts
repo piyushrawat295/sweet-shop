@@ -1,9 +1,10 @@
 import app from "./app";
-import dotenv from "dotenv";
 
-dotenv.config();
+const PORT = Number(process.env.PORT);
 
-const PORT = Number(process.env.PORT) || 10000;
+if (!PORT) {
+  throw new Error("PORT is not defined");
+}
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on ${PORT}`);
