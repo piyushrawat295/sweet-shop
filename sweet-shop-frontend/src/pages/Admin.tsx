@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Plus, Edit2, Trash2, Package, X, Save, Search } from "lucide-react";
 import {
   addSweet,

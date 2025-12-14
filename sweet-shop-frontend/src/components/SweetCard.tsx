@@ -1,5 +1,5 @@
 import { ShoppingCart } from "lucide-react";
-import type { Sweet } from "../types/Sweet";
+
 
 const colors: any = {
   chocolate: "bg-blue-400",

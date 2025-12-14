@@ -2,7 +2,7 @@ import { useState } from "react";
 import SweetCard from "../components/SweetCard";
 import type { Sweet } from "../types/Sweet";
 import { purchaseSweet } from "../services/inventory";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 import toast from "react-hot-toast";
 interface ShopProps {
   sweets: Sweet[];
@@ -12,7 +12,7 @@ interface ShopProps {
 export default function Shop({ sweets, setSweets }: ShopProps) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
-  const { user } = useAuth();
+  // const { user } = useAuth();
 
   // CATEGORY LIST
   const categories = [
