@@ -415,9 +415,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Piyush Rawat**  
 Full-Stack Developer (MERN | Next.js | PostgreSQL | Prisma)
 
-- GitHub: [@piyushrawat](https://github.com/piyushrawat)
+- GitHub: [@piyushrawat](https://github.com/piyushrawat295)
 - LinkedIn: [Piyush Rawat](https://linkedin.com/in/piyushrawat)
-- Email: piyush@example.com
+- Email: piyushrawat20072005@gmail.com
 
 ---
 
