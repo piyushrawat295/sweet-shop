@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const inventory_service_1 = require("./inventory.service");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const r = (0, express_1.Router)();
+r.use(auth_middleware_1.authMiddleware);
+r.post("/:id/purchase", async (req, res) => res.json(await (0, inventory_service_1.purchase)(+req.params.id)));
+r.post("/:id/restock", role_middleware_1.adminOnly, async (req, res) => res.json(await (0, inventory_service_1.restock)(+req.params.id, req.body.qty)));
+exports.default = r;
