@@ -13,6 +13,6 @@ router.use("/auth", authRoutes);
 router.use("/sweets", sweetsRoutes);
 
 // Inventory (purchase / restock)
-router.use("/sweets", inventoryRoutes);
+router.use("/inventory", inventoryRoutes);
 
 export default router;

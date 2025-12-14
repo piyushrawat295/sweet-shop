@@ -8,5 +8,6 @@ r.get("/", c.list);
 r.get("/search", c.search);
 r.put("/:id", c.update);
 r.delete("/:id", adminOnly, c.remove);
+r.post("/:id/purchase", authMiddleware, c.purchase);
 
 export default r;

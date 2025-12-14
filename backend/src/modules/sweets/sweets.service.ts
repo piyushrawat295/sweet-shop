@@ -3,7 +3,8 @@ import { prisma } from "../../config/prisma";
 export const createSweet = (data: any) =>
   prisma.sweet.create({ data });
 
-export const getAll = () => prisma.sweet.findMany();
+export const getAll = () =>
+  prisma.sweet.findMany();
 
 export const search = (q: any) =>
   prisma.sweet.findMany({
@@ -19,3 +20,29 @@ export const updateSweet = (id: number, data: any) =>
 
 export const deleteSweet = (id: number) =>
   prisma.sweet.delete({ where: { id } });
+
+/* =========================
+   ✅ PURCHASE SWEET (NEW)
+   ========================= */
+export const purchaseSweet = async (id: number) => {
+  const sweet = await prisma.sweet.findUnique({
+    where: { id }
+  });
+
+  if (!sweet) {
+    throw new Error("Sweet not found");
+  }
+
+  if (sweet.stock <= 0) {
+    throw new Error("Out of stock");
+  }
+
+  return prisma.sweet.update({
+    where: { id },
+    data: {
+      stock: {
+        decrement: 1
+      }
+    }
+  });
+};
